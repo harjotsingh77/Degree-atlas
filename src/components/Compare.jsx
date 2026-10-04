@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { inr, universities } from '../data.js';
-import { useCompare } from '../context/CompareContext.jsx';
+import { useCompare, useFloatingTrayActive } from '../context/CompareContext.jsx';
 
 export function CompareTray() {
   const location = useLocation();
@@ -8,7 +8,11 @@ export function CompareTray() {
   const isProgPage = location.pathname.startsWith('/programmes/') && location.pathname !== '/programmes';
   const isComparePage = location.pathname === '/compare';
   const { items, remove, clear, setModalOpen, trayOpen, setTrayOpen, notice } = useCompare();
-  if (isUniPage || isProgPage || isComparePage || !trayOpen || items.length === 0) return null;
+
+  const isVisible = !isUniPage && !isProgPage && !isComparePage && trayOpen && items.length > 0;
+  useFloatingTrayActive(isVisible);
+
+  if (!isVisible) return null;
   return (
     <div className="tray" role="region" aria-label="Comparison tray">
       <div className="tray-left">

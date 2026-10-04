@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { programmes, universities, inr } from '../data.js';
 import { UniversityLogo } from './UniversityLogo.jsx';
+import { useFloatingTrayActive } from '../context/CompareContext.jsx';
 import '../uni-compare.css';
 
 export default function ProgrammeCompareModal({
@@ -715,7 +716,10 @@ export function ProgrammeCompareFloatingTray({
       .filter((p, idx, self) => self.findIndex((o) => o.id === p.id) === idx);
   }, [selectedIds]);
 
-  if (selectedProgs.length === 0) return null;
+  const isVisible = selectedProgs.length > 0;
+  useFloatingTrayActive(isVisible);
+
+  if (!isVisible) return null;
 
   return (
     <div className="uni-cmp-floating-tray" role="region" aria-label="Programme Comparison Tray">

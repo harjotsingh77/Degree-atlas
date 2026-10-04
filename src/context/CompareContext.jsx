@@ -53,3 +53,21 @@ export function CompareProvider({ children }) {
   );
 }
 export const useCompare = () => useContext(Ctx);
+
+let activeTrayCount = 0;
+
+export function useFloatingTrayActive(isActive) {
+  useEffect(() => {
+    if (!isActive) return;
+    activeTrayCount++;
+    if (typeof document !== 'undefined') {
+      document.body.classList.add('has-compare-tray');
+    }
+    return () => {
+      activeTrayCount = Math.max(0, activeTrayCount - 1);
+      if (activeTrayCount === 0 && typeof document !== 'undefined') {
+        document.body.classList.remove('has-compare-tray');
+      }
+    };
+  }, [isActive]);
+}
