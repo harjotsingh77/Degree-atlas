@@ -4023,6 +4023,7 @@ body.mobile-menu-open .scroll-to-top-btn {
   box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3);
 }
 .home-filter-btn {
+  display: none !important;
   background: #FFFFFF;
   color: #1F2937;
   border: 1.5px solid #E5E7EB;
@@ -4031,7 +4032,6 @@ body.mobile-menu-open .scroll-to-top-btn {
   font-size: 13.5px;
   padding: 8px 18px;
   height: 40px;
-  display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -4045,6 +4045,12 @@ body.mobile-menu-open .scroll-to-top-btn {
   color: #ffffff !important;
   border-color: #0F172A !important;
   transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .home-filter-btn {
+    display: inline-flex !important;
+  }
 }
 
 @media (max-width: 768px) {
