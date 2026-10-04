@@ -1,0 +1,938 @@
+/* Kepler Hero Section Styles — Pixel-accurate match to Kepler Education */
+
+.kepler-hero-viewport {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #F7F6F2;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 30;
+}
+
+.kepler-hero-card {
+  position: relative;
+  overflow: visible;
+  border-radius: 0;
+  width: 100%;
+  min-height: 780px;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  background-image: 
+    linear-gradient(180deg, rgba(8, 10, 18, 0.66) 0%, rgba(8, 10, 18, 0.45) 30%, rgba(8, 10, 18, 0.54) 65%, rgba(8, 10, 18, 0.74) 100%),
+    url('/images/degree_hero_bg.jpg');
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 30;
+}
+
+/* ---------- Simple DegreeAtlas Navbar ---------- */
+.kepler-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 48px;
+  max-width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, rgba(14, 15, 26, 0.35) 0%, rgba(14, 15, 26, 0) 100%);
+  pointer-events: auto;
+}
+
+.atlas-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.atlas-nav-brand:hover {
+  opacity: 0.9;
+}
+
+.atlas-brand-mark {
+  display: grid;
+  place-items: center;
+}
+
+.atlas-brand-title {
+  font-family: 'Manrope', -apple-system, sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.atlas-brand-title span {
+  color: #ffffff;
+}
+
+.kepler-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.kepler-nav-links a,
+.kepler-nav-links .atlas-nav-compare {
+  color: #ffffff;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14.5px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  opacity: 0.92;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.15s ease, text-shadow 0.15s ease;
+}
+
+.kepler-nav-links a:hover,
+.kepler-nav-links .atlas-nav-compare:hover {
+  opacity: 1;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.atlas-compare-badge {
+  background: #DC2626;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0 5px;
+}
+
+.kepler-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Shortlist Round Heart Button */
+.atlas-shortlist-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  text-decoration: none;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.atlas-shortlist-btn .atlas-shortlist-heart {
+  width: 18px;
+  height: 18px;
+  color: #ffffff;
+  fill: transparent;
+  stroke: currentColor;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+
+.atlas-shortlist-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(239, 68, 68, 0.55);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.atlas-shortlist-btn:hover .atlas-shortlist-heart,
+.atlas-shortlist-heart:hover {
+  color: #EF4444 !important;
+  fill: #EF4444 !important;
+  stroke: #EF4444 !important;
+  transform: scale(1.18);
+  filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6));
+}
+
+.atlas-shortlist-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #EF4444;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Simple Login Pill */
+.atlas-login-pill {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 9999px;
+  padding: 8px 20px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.15s ease;
+}
+
+.atlas-login-pill:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Simple Get Started Button */
+.atlas-getstarted-btn {
+  background: linear-gradient(135deg, #E50914 0%, #DC2626 100%);
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 9px 22px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
+  transition: all 0.15s ease;
+}
+
+.atlas-getstarted-btn:hover {
+  background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(220, 38, 38, 0.45);
+}
+
+.atlas-mobile-compare {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.kepler-pill-btn:hover {
+  background: #f7f7fa;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+/* Mobile Toggle Hamburger */
+.kepler-mobile-toggle {
+  display: none;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 110;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.kepler-bar {
+  display: block;
+  width: 100%;
+  height: 2.5px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+  pointer-events: none !important;
+}
+
+.kepler-bar.open-1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.kepler-bar.open-2 {
+  opacity: 0;
+}
+.kepler-bar.open-3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.kepler-mobile-dropdown {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  width: min(340px, 86vw);
+  max-width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: #000000;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0;
+  padding: 20px 18px calc(24px + env(safe-area-inset-bottom, 0px));
+  z-index: 99999;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: slideLeftDrawer 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.85);
+  box-sizing: border-box;
+}
+
+.kepler-mobile-dropdown a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.kepler-mobile-dropdown a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.kepler-mobile-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.kepler-mobile-auth .atlas-login-pill {
+  width: 100%;
+  justify-content: center;
+  background: #171717;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+}
+
+.kepler-mobile-auth .atlas-getstarted-btn {
+  width: 100%;
+  justify-content: center;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+}
+
+/* ---------- Kepler Hero Content ---------- */
+.kepler-hero-content {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+  padding: 165px 24px 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.kepler-title {
+  font-family: 'Hedvig Letters Serif', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(35px, 4vw, 56px);
+  line-height: 1.16;
+  color: #ffffff;
+  margin: 0 0 18px;
+  letter-spacing: -0.015em;
+  text-shadow: 0 3px 24px rgba(0, 0, 0, 0.75), 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.kepler-subtitle {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: clamp(15.5px, 1.3vw, 17.5px);
+  line-height: 1.56;
+  color: #ffffff;
+  max-width: 660px;
+  margin: 0 0 30px;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.75), 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- Search Box ---------- */
+.kepler-search-container {
+  width: 100%;
+  max-width: 560px;
+  position: relative;
+}
+
+.kepler-search-form {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 9999px;
+  height: 56px;
+  padding: 4px 6px 4px 18px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22), 0 3px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.kepler-search-form:focus-within {
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.3), 0 0 0 3px rgba(220, 38, 38, 0.35);
+  transform: translateY(-1px);
+}
+
+.kepler-search-icon {
+  color: #9CA3AF;
+  display: grid;
+  place-items: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.kepler-search-form input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  color: #1F2937;
+  padding: 8px 0;
+  min-width: 0;
+}
+
+.kepler-search-form input::placeholder {
+  color: #9CA3AF;
+  opacity: 1;
+}
+
+.kepler-search-clear {
+  background: none;
+  border: none;
+  color: #9CA3AF;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 6px 10px;
+  margin-right: 4px;
+  transition: color 0.15s ease;
+}
+
+.kepler-search-clear:hover {
+  color: #374151;
+}
+
+.kepler-search-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #DC2626;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.38);
+  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.kepler-search-btn:hover {
+  background: #B91C1C;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(220, 38, 38, 0.48);
+}
+
+/* ---------- Search Suggestions Dropdown ---------- */
+.kepler-suggestions-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28), 0 4px 14px rgba(0, 0, 0, 0.08);
+  border: 1px solid #E5E7EB;
+  max-height: 380px;
+  overflow-y: auto;
+  z-index: 100;
+  text-align: left;
+  animation: keplerFadeIn 0.18s ease-out;
+}
+.kepler-suggestions-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+.kepler-suggestions-dropdown::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 999px;
+}
+.kepler-suggestions-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes keplerFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.kepler-suggestion-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #F3F4F6;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s ease;
+}
+
+.kepler-suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.kepler-suggestion-item:hover {
+  background: #F9FAFB;
+}
+
+.kepler-suggestion-badge {
+  background: #F1F5F9;
+  color: #64748B;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.kepler-suggestion-texts {
+  flex: 1;
+  min-width: 0;
+}
+
+.kepler-suggestion-texts strong {
+  display: block;
+  font-size: 14.5px;
+  color: #111827;
+  font-family: 'Space Grotesk', sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.kepler-suggestion-texts span {
+  display: block;
+  font-size: 12.5px;
+  color: #6B7280;
+  margin-top: 1px;
+}
+
+.kepler-suggestion-arrow {
+  color: #9CA3AF;
+  font-size: 15px;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.kepler-suggestion-item:hover .kepler-suggestion-arrow {
+  color: #DC2626;
+  transform: translateX(3px);
+}
+
+.kepler-suggestion-empty {
+  padding: 20px 22px;
+  color: #374151;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ---------- Auth Modal Demo ---------- */
+.kepler-auth-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 12, 22, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  animation: keplerFadeIn 0.2s ease-out;
+}
+
+.kepler-auth-dialog {
+  background: #ffffff;
+  border-radius: 24px;
+  max-width: 440px;
+  width: 100%;
+  padding: 32px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+.kepler-auth-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.kepler-auth-header h3 {
+  font-family: 'Hedvig Letters Serif', Georgia, serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #111827;
+  margin: 0;
+}
+
+.kepler-modal-close {
+  background: #F3F4F6;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  color: #4B5563;
+  font-size: 14px;
+  transition: background 0.15s ease;
+}
+
+.kepler-modal-close:hover {
+  background: #E5E7EB;
+}
+
+.kepler-auth-sub {
+  color: #6B7280;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 22px;
+}
+
+.kepler-form-group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.kepler-form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.kepler-form-group input {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid #D1D5DB;
+  font-size: 14.5px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.kepler-form-group input:focus {
+  border-color: #DC2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+.kepler-auth-submit {
+  width: 100%;
+  background: #DC2626;
+  color: #ffffff;
+  padding: 13px;
+  border-radius: 9999px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
+  transition: background 0.15s ease;
+}
+
+.kepler-auth-submit:hover {
+  background: #B91C1C;
+}
+
+/* ---------- Responsive Breakpoints & Mobile Drawer ---------- */
+.kepler-mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99998;
+  animation: keplerBackdropFade 0.2s ease-out;
+}
+
+@keyframes keplerBackdropFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.kepler-mobile-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.kepler-mobile-close-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #171717;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  font-size: 15px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.kepler-mobile-close-btn:hover {
+  background: #262626;
+  color: #DC2626;
+}
+
+.kepler-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kepler-mobile-links a {
+  display: flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 10px 14px;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15.5px;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: background 0.15s ease;
+}
+
+.kepler-mobile-links a:hover,
+.kepler-mobile-links a:active {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+.mobile-auth-btn {
+  width: 100%;
+  justify-content: center;
+  min-height: 46px;
+  font-size: 14.5px;
+}
+
+@keyframes slideLeftDrawer {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@media (max-width: 1024px) {
+  .kepler-nav-links {
+    display: none;
+  }
+  .kepler-mobile-toggle {
+    display: flex;
+  }
+  .kepler-navbar {
+    padding: 16px 24px;
+  }
+  .kepler-hero-card {
+    min-height: 580px;
+  }
+  .kepler-hero-content {
+    padding: 120px 20px 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .kepler-nav-actions .atlas-login-pill,
+  .kepler-nav-actions .atlas-getstarted-btn {
+    display: none !important;
+  }
+  .kepler-nav-actions .atlas-shortlist-btn {
+    display: inline-flex !important;
+    width: 38px;
+    height: 38px;
+  }
+  .kepler-hero-card {
+    min-height: clamp(620px, 90vh, 760px);
+    aspect-ratio: 9 / 16;
+    background-image: 
+      linear-gradient(180deg, rgba(8, 10, 18, 0.72) 0%, rgba(8, 10, 18, 0.38) 28%, rgba(8, 10, 18, 0.52) 62%, rgba(8, 10, 18, 0.88) 100%),
+      url('/images/degree_hero_bg_mobile.jpg?v=3');
+    background-size: cover;
+    background-position: center top;
+  }
+  .kepler-hero-content {
+    padding: 110px 18px 56px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .kepler-title {
+    font-size: clamp(32px, 6.8vw, 46px);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .kepler-subtitle {
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 500px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kepler-navbar {
+    padding: 14px 16px;
+  }
+  .atlas-brand-title {
+    font-size: 19px;
+  }
+  .kepler-hero-card {
+    min-height: clamp(600px, 92vh, 740px);
+    aspect-ratio: 9 / 16;
+    background-image: 
+      linear-gradient(180deg, rgba(8, 10, 18, 0.70) 0%, rgba(8, 10, 18, 0.35) 28%, rgba(8, 10, 18, 0.50) 62%, rgba(8, 10, 18, 0.90) 100%),
+      url('/images/degree_hero_bg_mobile.jpg?v=3');
+    background-size: cover;
+    background-position: center top;
+  }
+  .kepler-hero-content {
+    padding: 96px 14px 48px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .kepler-title {
+    font-size: clamp(28px, 8.2vw, 36px);
+    line-height: 1.22;
+    margin-bottom: 12px;
+  }
+  .kepler-subtitle {
+    font-size: 14px;
+    line-height: 1.48;
+    margin-bottom: 20px;
+    max-width: 340px;
+  }
+  .kepler-search-container {
+    max-width: 100%;
+  }
+  .kepler-search-form {
+    height: 48px;
+    padding: 3px 4px 3px 12px;
+  }
+  .kepler-search-icon {
+    margin-right: 8px;
+  }
+  .kepler-search-form input {
+    font-size: 13.5px;
+  }
+  .kepler-search-btn {
+    width: 38px;
+    height: 38px;
+  }
+  .kepler-suggestions-dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    border-radius: 16px;
+    max-height: 280px;
+  }
+  .kepler-suggestion-item {
+    padding: 10px 14px;
+  }
+  .kepler-auth-dialog {
+    padding: 24px 18px;
+    border-radius: 20px;
+    width: calc(100vw - 24px);
+  }
+}
+
+@media (max-width: 360px) {
+  .atlas-brand-title {
+    font-size: 17.5px;
+  }
+  .kepler-title {
+    font-size: 26px;
+  }
+  .kepler-search-form {
+    height: 46px;
+    padding: 2px 4px 2px 10px;
+  }
+}
+
+/* Hide floating Atlas ChatBot and ScrollToTop button when Mobile Drawer is Open */
+body.mobile-menu-open .atlas-chatbot-root,
+body.mobile-menu-open .atlas-chat-launcher,
+body.mobile-menu-open .scroll-to-top-btn {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
