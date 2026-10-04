@@ -201,11 +201,14 @@ export default function AtlasChatBot() {
             <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         ) : (
-          /* Red D Logo when closed */
+          /* Atlas Robot Mascot */
           <div className="atlas-launcher-inner">
-            <svg width="28" height="28" viewBox="0 0 32 32">
-              <path d="M6 4h10a12 12 0 0 1 12 12v0a12 12 0 0 1-12 12H6V4zm6 5.5v13h4a6.5 6.5 0 0 0 6.5-6.5v0a6.5 6.5 0 0 0-6.5-6.5h-4z" fill="#DC2626" />
-            </svg>
+            <img
+              src="/images/atlas_robot.png"
+              alt="Atlas AI Advisor"
+              className="atlas-launcher-avatar"
+              style={{ width: 38, height: 38, objectFit: 'contain', display: 'block' }}
+            />
           </div>
         )}
       </button>
@@ -225,9 +228,11 @@ export default function AtlasChatBot() {
           <div className="atlas-chat-header">
             <div className="atlas-header-left">
               <div className="atlas-avatar-circle">
-                <svg width="20" height="20" viewBox="0 0 32 32">
-                  <path d="M6 4h10a12 12 0 0 1 12 12v0a12 12 0 0 1-12 12H6V4zm6 5.5v13h4a6.5 6.5 0 0 0 6.5-6.5v0a6.5 6.5 0 0 0-6.5-6.5h-4z" fill="#DC2626" />
-                </svg>
+                <img
+                  src="/images/atlas_robot.png"
+                  alt="Atlas"
+                  style={{ width: 26, height: 26, objectFit: 'contain', display: 'block' }}
+                />
               </div>
               <div className="atlas-header-info">
                 <div className="atlas-header-title-row">
@@ -258,9 +263,11 @@ export default function AtlasChatBot() {
               <div key={m.id} className={`atlas-message-row ${m.sender === 'user' ? 'user-row' : 'atlas-row'}`}>
                 {m.sender === 'atlas' && (
                   <div className="atlas-msg-avatar">
-                    <svg width="14" height="14" viewBox="0 0 32 32">
-                      <path d="M6 4h10a12 12 0 0 1 12 12v0a12 12 0 0 1-12 12H6V4zm6 5.5v13h4a6.5 6.5 0 0 0 6.5-6.5v0a6.5 6.5 0 0 0-6.5-6.5h-4z" fill="#DC2626" />
-                    </svg>
+                    <img
+                      src="/images/atlas_robot.png"
+                      alt="Atlas"
+                      style={{ width: 17, height: 17, objectFit: 'contain', display: 'block' }}
+                    />
                   </div>
                 )}
                 <div className="atlas-bubble-wrap">
@@ -313,9 +320,11 @@ export default function AtlasChatBot() {
             {isTyping && (
               <div className="atlas-message-row atlas-row">
                 <div className="atlas-msg-avatar">
-                  <svg width="14" height="14" viewBox="0 0 32 32">
-                    <path d="M6 4h10a12 12 0 0 1 12 12v0a12 12 0 0 1-12 12H6V4zm6 5.5v13h4a6.5 6.5 0 0 0 6.5-6.5v0a6.5 6.5 0 0 0-6.5-6.5h-4z" fill="#DC2626" />
-                  </svg>
+                  <img
+                    src="/images/atlas_robot.png"
+                    alt="Atlas"
+                    style={{ width: 17, height: 17, objectFit: 'contain', display: 'block' }}
+                  />
                 </div>
                 <div className="atlas-bubble bot-bubble atlas-typing-bubble">
                   <span className="typing-dot" />
