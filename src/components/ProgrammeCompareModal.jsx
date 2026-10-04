@@ -360,7 +360,9 @@ export default function ProgrammeCompareModal({
                 </button>
               </div>
             ) : (
-              <table className="uni-cmp-table">
+              <>
+                <div className="uni-cmp-swipe-hint">← Swipe to compare programmes side-by-side →</div>
+                <table className="uni-cmp-table">
                 <thead>
                   <tr>
                     <th className="uni-cmp-table-header-col">Parameter</th>
@@ -590,14 +592,15 @@ export default function ProgrammeCompareModal({
                   </tr>
                 </tbody>
               </table>
-            )}
+            </>
+          )}
           </div>
         )}
 
         {/* Sticky Bottom Bar */}
         <div className="uni-cmp-bottom-bar">
           <div className="uni-cmp-tray-slots">
-            <span style={{ fontSize: 13, fontWeight: 700, color: '#0F172A', whiteSpace: 'nowrap', marginRight: 4 }}>
+            <span className="uni-cmp-tray-counter" style={{ marginRight: 4 }}>
               Compare ({selectedProgs.length}/4):
             </span>
 
@@ -623,19 +626,23 @@ export default function ProgrammeCompareModal({
             })}
 
             {/* Empty slots placeholders */}
-            {Array.from({ length: Math.max(0, 4 - selectedProgs.length) }).map((_, idx) => (
-              <div
-                key={idx}
-                className="uni-cmp-empty-slot"
-                style={{ cursor: viewMode === 'matrix' ? 'pointer' : 'default' }}
-                onClick={() => {
-                  if (viewMode === 'matrix') setViewMode('picker');
-                }}
-              >
-                <span>+</span>
-                <span>Add Programme</span>
-              </div>
-            ))}
+            {selectedProgs.length === 0 ? (
+              <span className="uni-cmp-tray-empty-hint">Select 2 to 4 programmes</span>
+            ) : (
+              Array.from({ length: Math.max(0, 4 - selectedProgs.length) }).map((_, idx) => (
+                <div
+                  key={idx}
+                  className="uni-cmp-empty-slot"
+                  style={{ cursor: viewMode === 'matrix' ? 'pointer' : 'default' }}
+                  onClick={() => {
+                    if (viewMode === 'matrix') setViewMode('picker');
+                  }}
+                >
+                  <span>+</span>
+                  <span>Add Programme</span>
+                </div>
+              ))
+            )}
           </div>
 
           <div className="uni-cmp-bar-actions">

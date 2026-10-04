@@ -366,7 +366,9 @@ export default function UniversityCompareModal({
                 </button>
               </div>
             ) : (
-              <table className="uni-cmp-table">
+              <>
+                <div className="uni-cmp-swipe-hint">← Swipe to compare side-by-side →</div>
+                <table className="uni-cmp-table">
                 <thead>
                   <tr>
                     <th className="uni-cmp-table-header-col">Parameter</th>
@@ -570,33 +572,41 @@ export default function UniversityCompareModal({
                   </tr>
                 </tbody>
               </table>
-            )}
-          </div>
-        )}
+            </>
+          )}
+        </div>
+      )}
 
-        {/* Sticky Bottom Bar */}
-        <div className="uni-cmp-bottom-bar">
-          <div className="uni-cmp-tray-slots">
-            {selectedUnis.map((uni) => (
-              <div key={uni.id} className="uni-cmp-chip">
-                <div className="uni-cmp-chip-thumb">
-                  <UniversityLogo id={uni.id} name={uni.name} short={uni.short} size={20} />
-                </div>
-                <span className="uni-cmp-chip-name">{uni.short || uni.name}</span>
-                <button
-                  type="button"
-                  className="uni-cmp-chip-remove"
-                  onClick={() => handleRemoveUni(uni.id)}
-                  aria-label={`Remove ${uni.name}`}
-                  title="Remove from comparison"
-                >
-                  ✕
-                </button>
+      {/* Sticky Bottom Bar */}
+      <div className="uni-cmp-bottom-bar">
+        <div className="uni-cmp-tray-slots">
+          <span className="uni-cmp-tray-counter" style={{ marginRight: 4 }}>
+            Compare ({selectedUnis.length}/4):
+          </span>
+
+          {selectedUnis.map((uni) => (
+            <div key={uni.id} className="uni-cmp-chip">
+              <div className="uni-cmp-chip-thumb">
+                <UniversityLogo id={uni.id} name={uni.name} short={uni.short} size={20} />
               </div>
-            ))}
+              <span className="uni-cmp-chip-name">{uni.short || uni.name}</span>
+              <button
+                type="button"
+                className="uni-cmp-chip-remove"
+                onClick={() => handleRemoveUni(uni.id)}
+                aria-label={`Remove ${uni.name}`}
+                title="Remove from comparison"
+              >
+                ✕
+              </button>
+            </div>
+          ))}
 
-            {/* Empty placeholder slots up to 4 */}
-            {Array.from({ length: Math.max(0, 4 - selectedUnis.length) }).map((_, idx) => (
+          {/* Empty placeholder slots up to 4 */}
+          {selectedUnis.length === 0 ? (
+            <span className="uni-cmp-tray-empty-hint">Select 2 to 4 universities</span>
+          ) : (
+            Array.from({ length: Math.max(0, 4 - selectedUnis.length) }).map((_, idx) => (
               <div
                 key={idx}
                 className="uni-cmp-empty-slot"
@@ -608,8 +618,9 @@ export default function UniversityCompareModal({
                 <span>+</span>
                 <span>Add University</span>
               </div>
-            ))}
-          </div>
+            ))
+          )}
+        </div>
 
           <div className="uni-cmp-bar-actions">
             {selectedUnis.length > 0 && (
